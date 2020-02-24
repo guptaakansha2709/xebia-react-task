@@ -38,9 +38,18 @@ class LoginForm extends Component {
             username,
             password
         }
+        this.redirectToHome();
         this.props.fetchLoginData(loginObj)
+    }
+    redirectToHome = () => {
+        debugger
+        return (
+            < Redirect exact from='/login' to="/home" ></Redirect >
+        )
+
 
     }
+
     render() {
         const { password, username } = this.state;
         const isEnabled = username && password ? true : false;
